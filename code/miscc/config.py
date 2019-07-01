@@ -10,33 +10,33 @@ __C = edict()
 cfg = __C
 
 # Dataset name: flowers, birds
-__C.DATASET_NAME = 'birds'
+__C.DATASET_NAME = 'clevr'
 __C.EMBEDDING_TYPE = 'cnn-rnn'
 __C.CONFIG_NAME = ''
 __C.GPU_ID = '0'
 __C.CUDA = True
-__C.WORKERS = 6
-__C.VIDEO_LEN = 5
+__C.WORKERS = 2
+__C.VIDEO_LEN = 4
 __C.NET_G = ''
 __C.NET_D = ''
 __C.STAGE1_G = ''
 __C.DATA_DIR = ''
-__C.VIS_COUNT = 64
+__C.VIS_COUNT = 10
 __C.ST_WEIGHT = 1.0
-__C.Z_DIM = 100
+__C.Z_DIM = 10
 __C.IMSIZE = 64
 __C.STAGE = 1
-__C.LABEL_NUM = 10
+__C.LABEL_NUM = 15
 # Training options
 __C.TRAIN = edict()
 __C.TRAIN.FLAG = True
-__C.TRAIN.IM_BATCH_SIZE = 64
-__C.TRAIN.ST_BATCH_SIZE = 64
-__C.TRAIN.MAX_EPOCH = 600
-__C.TRAIN.SNAPSHOT_INTERVAL = 50
+__C.TRAIN.IM_BATCH_SIZE = 60
+__C.TRAIN.ST_BATCH_SIZE = 24
+__C.TRAIN.MAX_EPOCH = 120
+__C.TRAIN.SNAPSHOT_INTERVAL = 10
 __C.TRAIN.PRETRAINED_MODEL = ''
 __C.TRAIN.PRETRAINED_EPOCH = 600
-__C.TRAIN.LR_DECAY_EPOCH = 600
+__C.TRAIN.LR_DECAY_EPOCH = 20
 __C.TRAIN.DISCRIMINATOR_LR = 2e-4
 __C.TRAIN.GENERATOR_LR = 2e-4
 
@@ -45,14 +45,14 @@ __C.TRAIN.COEFF.KL = 2.0
 
 # Modal options
 __C.GAN = edict()
-__C.GAN.CONDITION_DIM = 124
+__C.GAN.CONDITION_DIM = 75
 __C.GAN.Z_DIM = 100
-__C.GAN.DF_DIM = 64
-__C.GAN.GF_DIM = 128
+__C.GAN.DF_DIM = 96
+__C.GAN.GF_DIM = 192
 __C.GAN.R_NUM = 4
 
 __C.TEXT = edict()
-__C.TEXT.DIMENSION = 128
+__C.TEXT.DIMENSION = 75
 
 
 def _merge_a_into_b(a, b):
